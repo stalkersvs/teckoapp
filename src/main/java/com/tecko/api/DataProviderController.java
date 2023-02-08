@@ -2,12 +2,17 @@ package com.tecko.api;
 
 import com.tecko.api.data.DataPostRequest;
 import com.tecko.api.data.DataProviderService;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Api(
+        tags="DataProviderController",
+        description = "Controller for word retrieve or update."
+)
 @RestController
 @RequestMapping(path = "/data")
 public class DataProviderController {
