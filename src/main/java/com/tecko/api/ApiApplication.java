@@ -17,6 +17,11 @@ public class ApiApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(ApiApplication.class);
 
+    /**
+     * Start tecko/api application
+     *
+     * @param args {String[]}
+     */
     public static void main(String[] args) {
         SpringApplication.run(ApiApplication.class, args);
         LOG.info("Application started.");
