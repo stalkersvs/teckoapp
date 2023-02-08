@@ -14,8 +14,12 @@ public class DataProviderController {
 
     private static final Logger LOG = LoggerFactory.getLogger(DataProviderController.class);
 
+    private final DataProviderService dataProviderService;
+
     @Autowired
-    private DataProviderService dataProviderService;
+    public DataProviderController(DataProviderService dataProviderService) {
+        this.dataProviderService = dataProviderService;
+    }
 
     @GetMapping("/")
     public ResponseEntity<String> getHome(){

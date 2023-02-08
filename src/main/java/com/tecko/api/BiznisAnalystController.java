@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/biznis")
 public class BiznisAnalystController {
 
-    @Autowired
-    private BiznisAnalystService biznisAnalystService;
+    private final BiznisAnalystService biznisAnalystService;
 
+    @Autowired
+    public BiznisAnalystController(BiznisAnalystService biznisAnalystService) {
+        this.biznisAnalystService = biznisAnalystService;
+    }
 
     @GetMapping("/")
     @ResponseBody

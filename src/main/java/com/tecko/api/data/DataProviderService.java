@@ -23,14 +23,22 @@ public class DataProviderService {
         this.setValue(generateString());
     }
 
+    /**
+     * Create scheduler for generating new string every 5 seconds
+     */
     @Scheduled(initialDelay=5000,fixedRate = 5000)
-    private void scheduleItem(){
+    private void createGenerateSchedule(){
         String oldVal = this.getValue();
         this.setValue(generateString());
 
         LOG.info(String.format("Scheduled event run: %s/%s", oldVal, this.getValue()));
     }
 
+    /**
+     * Generate string via dependency Generex which use regex as generate pattern
+     *
+     * @return {String}
+     */
     private String generateString() {
         return new Generex(pattern).random();
     }
